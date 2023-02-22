@@ -12,7 +12,7 @@ namespace TkaniProbnikDem
 {
     public class BD
     {
-        MySqlConnection connection = new MySqlConnection("server=cfif31.ru;user ID=ISP24-38_LamasovaYAD;password=ISP24-38_LamasovaYAD;database=ISP24-38_LamasovaYAD_test;CharSet=utf8;Connection Timeout=3600");
+        MySqlConnection connection = new MySqlConnection("server=cfif31.ru;user ID=ISPr24-38_LamasovaYAD;password=ISPr24-38_LamasovaYAD;database=ISPr24-38_LamasovaYAD_test;CharSet=utf8;Connection Timeout=3600");
 
         public static BD Instance = new BD();
         public BD()

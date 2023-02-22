@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,17 +22,25 @@ namespace TkaniProbnikDem
         {
             if (!string.IsNullOrEmpty(tbLogin.Text) && !string.IsNullOrEmpty(tbPass.Text))
             {
-                DataTable table = BD.Instance.SqlZapros($"SELECT * FROM `User` WHERE `UserLogin`= '{tbLogin.Text}' AND `UserPassword` = '{tbPass.Text}'");
+                DataTable table = BD.Instance.SqlZapros($"SELECT * FROM `User` WHERE `UserLogin` = '{tbLogin.Text}' AND `UserPassword` = '{tbPass.Text}'");
 
-                if (table.Rows.Count > 0)
+                if(table.Rows.Count > 0)
                 {
                     User.localuser = new User(table.Rows[0]);
-                    ProfileUserForm profileUserf = new ProfileUserForm();
-                    profileUserf.Show();
+                    ProfileUser profileUser = new ProfileUser();
+                    profileUser.Show();
                     Hide();
-
                 }
+                else
+                {
+                    MessageBox.Show("Пользователя не существует.");
+                }
+                
             }
-        }
+            else
+            {
+                MessageBox.Show("Заполните все поля.");
+            }
+        }  
     }
 }
