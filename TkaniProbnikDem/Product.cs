@@ -14,6 +14,7 @@ namespace TkaniProbnikDem
         public string ProductDescription;
         public string ProductManufacturer;
         public double ProductCost;
+
         public Product(DataRow row)
         {
             ProductName = Convert.ToString(row["ProductName"]);
@@ -31,13 +32,6 @@ namespace TkaniProbnikDem
                 product.Add(p);
             }
             return product;
-
         }
     }
 }
-//Product p = new Product(row);
-//p.ProductName(DataGrid);
-//foreach (DataRow row in datatable.Rows)
-////{
-// }
-//return product;

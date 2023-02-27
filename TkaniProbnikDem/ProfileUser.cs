@@ -22,6 +22,14 @@ namespace TkaniProbnikDem
             lbName.Text = $"Имя: {User.localuser.UserName}";
             lbPatronymic.Text = $"Отчество: {User.localuser.UserPatronymic}";
             lbRole.Text = $"Роль: {User.GetRoleName(User.localuser.UserRole)}";
+
+            List<Product> list = Product.GetProduct();
+            foreach (Product product in list)
+            {
+                int i = dataGridView.Rows.Add(product.ProductName,product.ProductDescription,product.ProductManufacturer,product.ProductCost);
+                dataGridView.Rows[i].Tag = product;
+            }
+
         }
 
         private void btnOut_Click(object sender, EventArgs e)
@@ -30,17 +38,8 @@ namespace TkaniProbnikDem
             authForm.Show();
             Hide();
         }
-
-
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridView.Rows.Add(e.RowIndex, e.ColumnIndex);
-            //Product.GetProduct();
-            //foreach (Product p in DataGrid)
-            //{
-            //    //p.ProductName = NameTovar;
-            //}
-        }
     }
 }
+
+
 

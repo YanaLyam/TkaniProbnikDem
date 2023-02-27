@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TkaniProbnikDem
 {
-        public enum Role
-        {
-            admin = 0,
-            manager = 1,
-            client = 2
-        }
+    public enum Role
+    {
+        admin = 0,
+        manager = 1,
+        client = 2
+    }
 }

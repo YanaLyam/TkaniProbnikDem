@@ -109,11 +109,10 @@
             this.DescriptionTovar,
             this.ManufacturerTovar,
             this.PriceTovar});
-            this.dataGridView.Location = new System.Drawing.Point(137, 167);
+            this.dataGridView.Location = new System.Drawing.Point(30, 9);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(463, 228);
+            this.dataGridView.Size = new System.Drawing.Size(444, 319);
             this.dataGridView.TabIndex = 5;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // NameTovar
             // 
