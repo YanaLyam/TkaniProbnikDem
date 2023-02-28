@@ -38,7 +38,12 @@
             this.DescriptionTovar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ManufacturerTovar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceTovar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockTovar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbSort = new System.Windows.Forms.Label();
+            this.cbSort = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbSurname
@@ -108,10 +113,11 @@
             this.NameTovar,
             this.DescriptionTovar,
             this.ManufacturerTovar,
-            this.PriceTovar});
-            this.dataGridView.Location = new System.Drawing.Point(30, 9);
+            this.PriceTovar,
+            this.StockTovar});
+            this.dataGridView.Location = new System.Drawing.Point(203, 12);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(444, 319);
+            this.dataGridView.Size = new System.Drawing.Size(572, 315);
             this.dataGridView.TabIndex = 5;
             // 
             // NameTovar
@@ -142,12 +148,53 @@
             this.PriceTovar.Name = "PriceTovar";
             this.PriceTovar.ReadOnly = true;
             // 
+            // StockTovar
+            // 
+            this.StockTovar.Frozen = true;
+            this.StockTovar.HeaderText = "Наличие на складе";
+            this.StockTovar.Name = "StockTovar";
+            this.StockTovar.ReadOnly = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbSort);
+            this.groupBox1.Controls.Add(this.cbSort);
+            this.groupBox1.Controls.Add(this.dataGridView);
+            this.groupBox1.Location = new System.Drawing.Point(12, 161);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(781, 333);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // lbSort
+            // 
+            this.lbSort.AutoSize = true;
+            this.lbSort.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbSort.Location = new System.Drawing.Point(16, 16);
+            this.lbSort.Name = "lbSort";
+            this.lbSort.Size = new System.Drawing.Size(148, 23);
+            this.lbSort.TabIndex = 7;
+            this.lbSort.Text = "Сортировка цены:";
+            // 
+            // cbSort
+            // 
+            this.cbSort.FormattingEnabled = true;
+            this.cbSort.Items.AddRange(new object[] {
+            "По возрастанию",
+            "По убыванию"});
+            this.cbSort.Location = new System.Drawing.Point(20, 39);
+            this.cbSort.Name = "cbSort";
+            this.cbSort.Size = new System.Drawing.Size(121, 21);
+            this.cbSort.TabIndex = 6;
+            this.cbSort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cbSort_MouseDown);
+            // 
             // ProfileUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 506);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnOut);
             this.Controls.Add(this.lbRole);
             this.Controls.Add(this.lbPatronymic);
@@ -157,6 +204,8 @@
             this.Name = "ProfileUser";
             this.Text = "ProfileUser";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +223,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionTovar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ManufacturerTovar;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceTovar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockTovar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbSort;
+        private System.Windows.Forms.Label lbSort;
     }
 }
