@@ -1,5 +1,4 @@
-﻿using Microsoft.Build.Framework.XamlTypes;
-using Microsoft.Build.Tasks.Deployment.Bootstrapper;
+﻿using Microsoft.Build.Tasks.Deployment.Bootstrapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,19 +23,11 @@ namespace TkaniProbnikDem
             lbPatronymic.Text = $"Отчество: {User.localuser.UserPatronymic}";
             lbRole.Text = $"Роль: {User.GetRoleName(User.localuser.UserRole)}";
 
-            List<Product> list = Product.GetProduct();
-            foreach (Product product in list)
-            {
-                int i = dataGridView.Rows.Add(product.ProductName,product.ProductDescription,product.ProductManufacturer,product.ProductCost,product.ProductQuantityInStock);
-                dataGridView.Rows[i].Tag = product;
-            }
+            RefreshData();
 
-            List<Product> sortlist = Product.SortingASC();
-            foreach (Product product in sortlist)
-            {
-                int s=cbSort.Items.Add(product);
-                dataGridView.Rows[s].Tag= product;
-            }
+            //List<Product> sort = Product.GetProduct(tbSourceTovar.Text);
+            //if (cbSort.Text == "По возрастанию цены")
+            //    return;
         }
 
         private void btnOut_Click(object sender, EventArgs e)
@@ -45,10 +36,19 @@ namespace TkaniProbnikDem
             authForm.Show();
             Hide();
         }
-
-        private void cbSort_MouseDown(object sender, MouseEventArgs e)
+        public void RefreshData()
         {
-            
+            dataGridView.Rows.Clear();
+            List<Product> list = Product.GetProduct(tbSource.Text);
+            foreach (Product product in list)
+            {
+                int i = dataGridView.Rows.Add(product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCost,product.ProductQuantityInStock);
+                dataGridView.Rows[i].Tag = product;
+            }
+        }
+        private void tbSource_TextChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }

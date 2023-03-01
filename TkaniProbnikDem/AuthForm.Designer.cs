@@ -82,6 +82,7 @@
             this.tbPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbPass.Location = new System.Drawing.Point(159, 169);
             this.tbPass.Name = "tbPass";
+            this.tbPass.PasswordChar = '•';
             this.tbPass.Size = new System.Drawing.Size(229, 31);
             this.tbPass.TabIndex = 4;
             // 
