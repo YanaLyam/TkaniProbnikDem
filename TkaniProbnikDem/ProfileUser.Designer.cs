@@ -42,7 +42,7 @@
             this.cbSort = new System.Windows.Forms.ComboBox();
             this.lbSort = new System.Windows.Forms.Label();
             this.lbSource = new System.Windows.Forms.Label();
-            this.tbSource = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.ckbSort = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -161,8 +161,8 @@
             this.cbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbSort.FormattingEnabled = true;
             this.cbSort.Items.AddRange(new object[] {
-            "По возрастанию цены",
-            "По убыванию цены"});
+            "Название",
+            "Цена"});
             this.cbSort.Location = new System.Drawing.Point(58, 201);
             this.cbSort.Name = "cbSort";
             this.cbSort.Size = new System.Drawing.Size(158, 24);
@@ -189,24 +189,27 @@
             this.lbSource.TabIndex = 8;
             this.lbSource.Text = "Поиск";
             // 
-            // tbSource
+            // tbSearch
             // 
-            this.tbSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbSource.Location = new System.Drawing.Point(340, 139);
-            this.tbSource.Name = "tbSource";
-            this.tbSource.Size = new System.Drawing.Size(177, 26);
-            this.tbSource.TabIndex = 9;
-            this.tbSource.TextChanged += new System.EventHandler(this.tbSource_TextChanged);
+            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbSearch.Location = new System.Drawing.Point(340, 139);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(177, 26);
+            this.tbSearch.TabIndex = 9;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSource_TextChanged);
             // 
             // ckbSort
             // 
             this.ckbSort.AutoSize = true;
+            this.ckbSort.Checked = true;
+            this.ckbSort.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbSort.Location = new System.Drawing.Point(58, 265);
             this.ckbSort.Name = "ckbSort";
-            this.ckbSort.Size = new System.Drawing.Size(70, 17);
+            this.ckbSort.Size = new System.Drawing.Size(110, 17);
             this.ckbSort.TabIndex = 10;
-            this.ckbSort.Text = "Выбрать";
+            this.ckbSort.Text = "По возрастанию";
             this.ckbSort.UseVisualStyleBackColor = true;
+            this.ckbSort.CheckedChanged += new System.EventHandler(this.ckbSort_CheckedChanged);
             // 
             // ProfileUser
             // 
@@ -214,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 506);
             this.Controls.Add(this.ckbSort);
-            this.Controls.Add(this.tbSource);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.lbSource);
             this.Controls.Add(this.lbSort);
             this.Controls.Add(this.cbSort);
@@ -249,7 +252,7 @@
         private System.Windows.Forms.ComboBox cbSort;
         private System.Windows.Forms.Label lbSort;
         private System.Windows.Forms.Label lbSource;
-        private System.Windows.Forms.TextBox tbSource;
+        private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.CheckBox ckbSort;
     }
 }

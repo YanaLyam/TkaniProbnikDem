@@ -24,7 +24,6 @@ namespace TkaniProbnikDem
             lbPatronymic.Text = $"Отчество: {User.localuser.UserPatronymic}";
             lbRole.Text = $"Роль: {User.GetRoleName(User.localuser.UserRole)}";
 
-
             RefreshData();
             
         }
@@ -37,10 +36,10 @@ namespace TkaniProbnikDem
         public void RefreshData()
         {
             dataGridView.Rows.Clear();
-            List<Product> list = Product.GetProduct(tbSource.Text);
+            List<Product> list = SortBy(Product.GetProduct(tbSearch.Text));
             foreach (Product product in list)
             {
-                int i = dataGridView.Rows.Add(product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCost,product.ProductQuantityInStock);
+                int i = dataGridView.Rows.Add(product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCost, product.ProductQuantityInStock);
                 dataGridView.Rows[i].Tag = product;
             }
             
@@ -67,17 +66,17 @@ namespace TkaniProbnikDem
             if (ckbSort.Checked)
             {
                 if (cbSort.SelectedIndex == -1)
-                    return list.OrderBy(p => p.ProductDescription).ToList();
-                else if(cbSort.SelectedItem.ToString() == "Наименование товара")
-                    return list.OrderBy(p=>p.ProductName).ToList();
+                    return list.OrderBy(p => p.ProductId).ToList();
+                else if (cbSort.SelectedItem.ToString() == "Название")
+                    return list.OrderBy(p => p.ProductName).ToList();
                 else if (cbSort.SelectedItem.ToString() == "Цена")
                     return list.OrderBy(p => p.ProductCost).ToList();
             }
             else
             {
                 if (cbSort.SelectedIndex == -1)
-                    return list.OrderByDescending(p => p.ProductDescription).ToList();
-                else if (cbSort.SelectedItem.ToString() == "Наименование товара")
+                    return list.OrderByDescending(p => p.ProductId).ToList();
+                else if (cbSort.SelectedItem.ToString() == "Название")
                     return list.OrderByDescending(p => p.ProductName).ToList();
                 else if (cbSort.SelectedItem.ToString() == "Цена")
                     return list.OrderByDescending(p => p.ProductCost).ToList();
@@ -87,6 +86,11 @@ namespace TkaniProbnikDem
         }
 
         private void cbSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void ckbSort_CheckedChanged(object sender, EventArgs e)
         {
             RefreshData();
         }
