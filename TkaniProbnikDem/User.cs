@@ -29,6 +29,8 @@ namespace TkaniProbnikDem
                     return "Менеджер";
                 case Role.client:
                     return "Клиент";
+                case Role.guest:
+                    return "Гость";
                 default:
                     return "";
 
@@ -45,6 +47,5 @@ namespace TkaniProbnikDem
             UserPassword = Convert.ToString(row["UserPassword"]);
             UserRole = (Role)Convert.ToInt32(row["UserRole"]);
         }
-  
     }
 }

@@ -34,6 +34,7 @@
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.tbPass = new System.Windows.Forms.TextBox();
             this.btnEnter = new System.Windows.Forms.Button();
+            this.btnEnterGuest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbAuth
@@ -102,12 +103,30 @@
             this.btnEnter.UseVisualStyleBackColor = false;
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
+            // btnEnterGuest
+            // 
+            this.btnEnterGuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
+            this.btnEnterGuest.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEnterGuest.FlatAppearance.BorderSize = 0;
+            this.btnEnterGuest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnEnterGuest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEnterGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnterGuest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.btnEnterGuest.Location = new System.Drawing.Point(172, 347);
+            this.btnEnterGuest.Name = "btnEnterGuest";
+            this.btnEnterGuest.Size = new System.Drawing.Size(169, 24);
+            this.btnEnterGuest.TabIndex = 6;
+            this.btnEnterGuest.Text = "Войти как гость";
+            this.btnEnterGuest.UseVisualStyleBackColor = false;
+            this.btnEnterGuest.Click += new System.EventHandler(this.btnEnterGuest_Click);
+            // 
             // AuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(548, 400);
+            this.Controls.Add(this.btnEnterGuest);
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.tbPass);
             this.Controls.Add(this.tbLogin);
@@ -130,6 +149,7 @@
         private System.Windows.Forms.TextBox tbLogin;
         private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.Button btnEnter;
+        private System.Windows.Forms.Button btnEnterGuest;
     }
 }
 

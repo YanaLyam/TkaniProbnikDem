@@ -13,7 +13,7 @@ namespace TkaniProbnikDem
         public string ProductName;
         public string ProductDescription;
         public string ProductManufacturer;
-        public double ProductCost;
+        public double ProductCost { get; set; }
         public int ProductQuantityInStock;
 
         public Product(DataRow row)
@@ -27,13 +27,16 @@ namespace TkaniProbnikDem
         public static List<Product> GetProduct(string tbSource)
         {
             List<Product> product = new List<Product>();
-            DataTable datatable = BD.Instance.SqlZapros($"SELECT `ProductName`,`ProductDescription`,`ProductManufacturer`,`ProductCost`,`ProductQuantityInStock` FROM `Product` WHERE `ProductName` LIKE '%{tbSource}%' OR `ProductManufacturer` LIKE '%{tbSource}%'");
+            DataTable datatable = BD.Instance.SqlZapros($"SELECT `ProductName`,`ProductDescription`,`ProductManufacturer`,`ProductCost`,`ProductQuantityInStock` FROM `Product` WHERE `ProductName` LIKE '%{tbSource}%' OR `ProductManufacturer`  LIKE '%{tbSource}%'");
             foreach (DataRow row in datatable.Rows)
             {
                 Product p = new Product(row);
                 product.Add(p);
             }
             return product;
+            
         }
+        
+        
     }
 }

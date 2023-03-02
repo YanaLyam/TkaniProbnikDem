@@ -8,6 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace TkaniProbnikDem
 {
@@ -41,6 +42,13 @@ namespace TkaniProbnikDem
             {
                 MessageBox.Show("Заполните все поля.");
             }
-        }  
+        }
+
+        private void btnEnterGuest_Click(object sender, EventArgs e)
+        {
+            ProfileUser profile= new ProfileUser();
+            profile.Show();
+            Hide();
+        }
     }
 }

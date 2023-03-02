@@ -10,6 +10,7 @@ namespace TkaniProbnikDem
     {
         admin = 0,
         manager = 1,
-        client = 2
+        client = 2,
+        guest = 3
     }
 }

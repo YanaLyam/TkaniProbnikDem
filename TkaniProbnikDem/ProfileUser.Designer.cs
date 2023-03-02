@@ -43,6 +43,7 @@
             this.lbSort = new System.Windows.Forms.Label();
             this.lbSource = new System.Windows.Forms.Label();
             this.tbSource = new System.Windows.Forms.TextBox();
+            this.ckbSort = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,33 +158,34 @@
             // 
             // cbSort
             // 
-            this.cbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbSort.FormattingEnabled = true;
             this.cbSort.Items.AddRange(new object[] {
             "По возрастанию цены",
             "По убыванию цены"});
             this.cbSort.Location = new System.Drawing.Point(58, 201);
             this.cbSort.Name = "cbSort";
-            this.cbSort.Size = new System.Drawing.Size(158, 28);
+            this.cbSort.Size = new System.Drawing.Size(158, 24);
             this.cbSort.TabIndex = 6;
+            this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
             // 
             // lbSort
             // 
             this.lbSort.AutoSize = true;
-            this.lbSort.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbSort.Location = new System.Drawing.Point(54, 175);
+            this.lbSort.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbSort.Location = new System.Drawing.Point(53, 172);
             this.lbSort.Name = "lbSort";
-            this.lbSort.Size = new System.Drawing.Size(98, 23);
+            this.lbSort.Size = new System.Drawing.Size(115, 26);
             this.lbSort.TabIndex = 7;
             this.lbSort.Text = "Сортировка";
             // 
             // lbSource
             // 
             this.lbSource.AutoSize = true;
-            this.lbSource.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbSource.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbSource.Location = new System.Drawing.Point(258, 142);
             this.lbSource.Name = "lbSource";
-            this.lbSource.Size = new System.Drawing.Size(60, 23);
+            this.lbSource.Size = new System.Drawing.Size(71, 26);
             this.lbSource.TabIndex = 8;
             this.lbSource.Text = "Поиск";
             // 
@@ -196,11 +198,22 @@
             this.tbSource.TabIndex = 9;
             this.tbSource.TextChanged += new System.EventHandler(this.tbSource_TextChanged);
             // 
+            // ckbSort
+            // 
+            this.ckbSort.AutoSize = true;
+            this.ckbSort.Location = new System.Drawing.Point(58, 265);
+            this.ckbSort.Name = "ckbSort";
+            this.ckbSort.Size = new System.Drawing.Size(70, 17);
+            this.ckbSort.TabIndex = 10;
+            this.ckbSort.Text = "Выбрать";
+            this.ckbSort.UseVisualStyleBackColor = true;
+            // 
             // ProfileUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 506);
+            this.Controls.Add(this.ckbSort);
             this.Controls.Add(this.tbSource);
             this.Controls.Add(this.lbSource);
             this.Controls.Add(this.lbSort);
@@ -237,5 +250,6 @@
         private System.Windows.Forms.Label lbSort;
         private System.Windows.Forms.Label lbSource;
         private System.Windows.Forms.TextBox tbSource;
+        private System.Windows.Forms.CheckBox ckbSort;
     }
 }
