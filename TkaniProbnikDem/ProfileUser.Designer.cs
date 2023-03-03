@@ -44,7 +44,9 @@
             this.lbSource = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.ckbSort = new System.Windows.Forms.CheckBox();
+            this.flpProfileUserForm = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.flpProfileUserForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbSurname
@@ -99,7 +101,7 @@
             this.btnOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOut.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
-            this.btnOut.Location = new System.Drawing.Point(690, 124);
+            this.btnOut.Location = new System.Drawing.Point(690, 114);
             this.btnOut.Name = "btnOut";
             this.btnOut.Size = new System.Drawing.Size(103, 31);
             this.btnOut.TabIndex = 4;
@@ -116,10 +118,11 @@
             this.ManufacturerTovar,
             this.PriceTovar,
             this.StockTovar});
-            this.dataGridView.Location = new System.Drawing.Point(261, 175);
+            this.dataGridView.Location = new System.Drawing.Point(186, 105);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(532, 319);
+            this.dataGridView.Size = new System.Drawing.Size(546, 235);
             this.dataGridView.TabIndex = 5;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // NameTovar
             // 
@@ -163,7 +166,7 @@
             this.cbSort.Items.AddRange(new object[] {
             "Название",
             "Цена"});
-            this.cbSort.Location = new System.Drawing.Point(58, 201);
+            this.cbSort.Location = new System.Drawing.Point(3, 290);
             this.cbSort.Name = "cbSort";
             this.cbSort.Size = new System.Drawing.Size(158, 24);
             this.cbSort.TabIndex = 6;
@@ -173,7 +176,7 @@
             // 
             this.lbSort.AutoSize = true;
             this.lbSort.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbSort.Location = new System.Drawing.Point(53, 172);
+            this.lbSort.Location = new System.Drawing.Point(3, 317);
             this.lbSort.Name = "lbSort";
             this.lbSort.Size = new System.Drawing.Size(115, 26);
             this.lbSort.TabIndex = 7;
@@ -183,7 +186,7 @@
             // 
             this.lbSource.AutoSize = true;
             this.lbSource.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbSource.Location = new System.Drawing.Point(258, 142);
+            this.lbSource.Location = new System.Drawing.Point(3, 238);
             this.lbSource.Name = "lbSource";
             this.lbSource.Size = new System.Drawing.Size(71, 26);
             this.lbSource.TabIndex = 8;
@@ -192,7 +195,7 @@
             // tbSearch
             // 
             this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbSearch.Location = new System.Drawing.Point(340, 139);
+            this.tbSearch.Location = new System.Drawing.Point(3, 209);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(177, 26);
             this.tbSearch.TabIndex = 9;
@@ -203,7 +206,7 @@
             this.ckbSort.AutoSize = true;
             this.ckbSort.Checked = true;
             this.ckbSort.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbSort.Location = new System.Drawing.Point(58, 265);
+            this.ckbSort.Location = new System.Drawing.Point(3, 267);
             this.ckbSort.Name = "ckbSort";
             this.ckbSort.Size = new System.Drawing.Size(110, 17);
             this.ckbSort.TabIndex = 10;
@@ -211,17 +214,27 @@
             this.ckbSort.UseVisualStyleBackColor = true;
             this.ckbSort.CheckedChanged += new System.EventHandler(this.ckbSort_CheckedChanged);
             // 
+            // flpProfileUserForm
+            // 
+            this.flpProfileUserForm.Controls.Add(this.lbSort);
+            this.flpProfileUserForm.Controls.Add(this.cbSort);
+            this.flpProfileUserForm.Controls.Add(this.ckbSort);
+            this.flpProfileUserForm.Controls.Add(this.lbSource);
+            this.flpProfileUserForm.Controls.Add(this.tbSearch);
+            this.flpProfileUserForm.Controls.Add(this.dataGridView);
+            this.flpProfileUserForm.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.flpProfileUserForm.Location = new System.Drawing.Point(23, 151);
+            this.flpProfileUserForm.Name = "flpProfileUserForm";
+            this.flpProfileUserForm.Size = new System.Drawing.Size(770, 343);
+            this.flpProfileUserForm.TabIndex = 11;
+            this.flpProfileUserForm.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
             // ProfileUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 506);
-            this.Controls.Add(this.ckbSort);
-            this.Controls.Add(this.tbSearch);
-            this.Controls.Add(this.lbSource);
-            this.Controls.Add(this.lbSort);
-            this.Controls.Add(this.cbSort);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.flpProfileUserForm);
             this.Controls.Add(this.btnOut);
             this.Controls.Add(this.lbRole);
             this.Controls.Add(this.lbPatronymic);
@@ -230,7 +243,10 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "ProfileUser";
             this.Text = "ProfileUser";
+            this.Load += new System.EventHandler(this.ProfileUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.flpProfileUserForm.ResumeLayout(false);
+            this.flpProfileUserForm.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +270,6 @@
         private System.Windows.Forms.Label lbSource;
         private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.CheckBox ckbSort;
+        private System.Windows.Forms.FlowLayoutPanel flpProfileUserForm;
     }
 }

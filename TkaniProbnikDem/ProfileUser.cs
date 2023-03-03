@@ -1,6 +1,4 @@
-﻿using Microsoft.Build.Framework.XamlTypes;
-using Microsoft.Build.Tasks.Deployment.Bootstrapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +22,7 @@ namespace TkaniProbnikDem
             lbPatronymic.Text = $"Отчество: {User.localuser.UserPatronymic}";
             lbRole.Text = $"Роль: {User.GetRoleName(User.localuser.UserRole)}";
 
-            RefreshData();
+            RefreshDataTovar();
             
         }
         private void btnOut_Click(object sender, EventArgs e)
@@ -33,7 +31,7 @@ namespace TkaniProbnikDem
             authForm.Show();
             Hide();
         }
-        public void RefreshData()
+        public void RefreshDataTovar()
         {
             dataGridView.Rows.Clear();
             List<Product> list = SortBy(Product.GetProduct(tbSearch.Text));
@@ -46,7 +44,7 @@ namespace TkaniProbnikDem
         }
         private void tbSource_TextChanged(object sender, EventArgs e)
         {
-            RefreshData();
+            RefreshDataTovar();
         }
         public bool SortPrice(Product p)
         {
@@ -87,12 +85,31 @@ namespace TkaniProbnikDem
 
         private void cbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RefreshData();
+            RefreshDataTovar();
         }
 
         private void ckbSort_CheckedChanged(object sender, EventArgs e)
         {
-            RefreshData();
+            RefreshDataTovar();
+        }
+        public void RefreshDataUsers()
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ProfileUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -39,7 +39,5 @@ namespace TkaniProbnikDem
             return product;
             
         }
-        
-        
     }
 }
